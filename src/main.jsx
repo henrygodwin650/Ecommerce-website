@@ -20,7 +20,7 @@ createRoot(document.getElementById('root')).render(
     <HashRouter>
       <CartProvider>
         <Routes>
-          <Route path="/" element={<Linkpp />} />
+          <Route path="/" element={<App />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/contact" element={<MainContact />} />

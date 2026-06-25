@@ -209,7 +209,7 @@ const Checkout = () => {
                     >
                       Remove
                     </button>
-                    <Link href="/tracking" className="text-green-600 hover:underline text-sm font-medium">
+                    <Link to="/tracking" className="text-green-600 hover:underline text-sm font-medium">
                       Track
                     </Link>
                   </div>

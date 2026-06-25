@@ -49,7 +49,7 @@ const Navbar = ({ cartCount = 0 }) => {
             {MenuLinks.map((item) => (
               <Link
                 key={item.id}
-                href={item.link}
+                to={item.link}
                 className="font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 transition"
               >
                 {item.name}
@@ -57,7 +57,7 @@ const Navbar = ({ cartCount = 0 }) => {
             ))}
 
             <button className="relative">
-              <Link href="/checkout">
+              <Link to="/checkout">
                 <FaCartShopping className="text-2xl text-gray-700 dark:text-white hover:text-green-600" />
               </Link>
 
@@ -75,7 +75,7 @@ const Navbar = ({ cartCount = 0 }) => {
           <div className="flex sm:hidden items-center gap-4">
 
             <button className="relative">
-              <Link href="/checkout">
+              <Link to="/checkout">
                 <FaCartShopping className="text-2xl text-gray-700 dark:text-white" />
               </Link>
 
@@ -121,7 +121,7 @@ const Navbar = ({ cartCount = 0 }) => {
           {MenuLinks.map((item) => (
             <Link
               key={item.id}
-              href={item.link}
+              to={item.link}
               onClick={() => setMobileMenu(false)}
               className="block px-6 py-4 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
             >
@@ -131,15 +131,15 @@ const Navbar = ({ cartCount = 0 }) => {
 
           <div className="flex justify-center gap-8 py-5">
 
-            <Link href="/" className="text-2xl text-gray-700 dark:text-white">
+            <Link to="/" className="text-2xl text-gray-700 dark:text-white">
               <FiHome />
             </Link>
 
-            <Link href="/blogs" className="text-2xl text-gray-700 dark:text-white">
+            <Link to="/blogs" className="text-2xl text-gray-700 dark:text-white">
               <BiHeart />
             </Link>
 
-            <Link href="/contact" className="text-2xl text-gray-700 dark:text-white">
+            <Link to="/contact" className="text-2xl text-gray-700 dark:text-white">
               <BiUser />
             </Link>
 
