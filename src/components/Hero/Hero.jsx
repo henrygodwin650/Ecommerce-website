@@ -1,6 +1,7 @@
 import React from 'react';
 import Buttons from '../shared/Buttons';
 import Slider from 'react-slick';
+import { Link } from 'react-router';
 
 // Images
 import Image1 from '../../assets/category/earphone.png';

@@ -3,6 +3,7 @@ import Image1 from "../../assets/category/smartwatch2-removebg-preview.png";
 import Image2 from "../../assets/products/men-athletic-shoes-white.jpg";
 import Image3 from "../../assets/products/men-navigator-sunglasses-black.jpg";
 import Image4 from "../../assets/category/gaming.png";
+import { Link } from 'react-router';
 
 const categories = [
   {

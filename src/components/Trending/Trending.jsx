@@ -3,6 +3,7 @@ import Image1 from '../../assets/category/watch.png';
 import Image2 from '../../assets/hero/headphone.png';
 import Image3 from '../../assets/category/macbook.png';
 import Image4 from '../../assets/products/knit-athletic-sneakers-gray.jpg';
+import { Link } from 'react-router';
 
 
 const Trending = () => {

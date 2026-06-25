@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import ProductData from './productData';
 import { useCart } from '../Checkout/CartContext';
+import { Link } from 'react-router';
 
 const Products = () => {
   const { addToCart } = useCart();

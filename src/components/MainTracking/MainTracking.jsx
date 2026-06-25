@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaBox, FaTruck } from 'react-icons/fa6';
+import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import Navbar from '../Navbar/Navbar';
 import ProductData from '../Products/productData';

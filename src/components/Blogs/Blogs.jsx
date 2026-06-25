@@ -4,6 +4,7 @@ import Image1 from '../../assets/blogs/blog-1.jpg'
 import Image2 from '../../assets/blogs/blog-2.jpg'
 import Image3 from '../../assets/blogs/blog-3.jpg'
 import Navbar from './Navbar'
+import { Link } from 'react-router';
 
 const Blog = () => {
   const posts = [

@@ -6,6 +6,7 @@ import {
   AiOutlineTwitter, 
   AiOutlineWhatsApp 
 } from 'react-icons/ai';
+import { Link } from 'react-router';
 
 const Footer = () => {
   return (
@@ -31,41 +32,41 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-bold uppercase mb-6 text-green-400">Product</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-white transition">Source & Attract</a></li>
-              <li><a href="#" className="hover:text-white transition">Evaluate & Collaborate</a></li>
-              <li><a href="#" className="hover:text-white transition">Automate & Hire</a></li>
-              <li><a href="#" className="hover:text-white transition">Onboard & Manage</a></li>
-              <li><a href="#" className="hover:text-white transition">All Features</a></li>
+              <li><Link href="#" className="hover:text-white transition">Source & Attract</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Evaluate & Collaborate</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Automate & Hire</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Onboard & Manage</Link></li>
+              <li><Link href="#" className="hover:text-white transition">All Features</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-bold uppercase mb-6 text-green-400">Platform</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-white transition">Pricing</a></li>
-              <li><a href="#" className="hover:text-white transition">Why Ice-Shops</a></li>
-              <li><a href="#" className="hover:text-white transition">Help Center</a></li>
-              <li><a href="#" className="hover:text-white transition">Partners & Integrations</a></li>
-              <li><a href="#" className="hover:text-white transition">Security</a></li>
+              <li><Link href="#" className="hover:text-white transition">Pricing</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Why Ice-Shops</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Help Center</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Partners & Integrations</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Security</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-bold uppercase mb-6 text-green-400">Resources</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="#" className="hover:text-white transition">Job Descriptions</a></li>
-              <li><a href="#" className="hover:text-white transition">Hiring Templates</a></li>
-              <li><a href="#" className="hover:text-white transition">Career Center</a></li>
+              <li><Link href="#" className="hover:text-white transition">Job Descriptions</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Hiring Templates</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Career Center</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="text-lg font-bold uppercase mb-6 text-green-400">Company</h3>
             <ul className="space-y-3 text-gray-300">
-              <li><a href="/contact" className="hover:text-white transition">About Us</a></li>
-              <li><a href="/contact" className="hover:text-white transition">Contact Us</a></li>
-              <li><a href="#" className="hover:text-white transition">Press</a></li>
-              <li><a href="#" className="hover:text-white transition">Careers</a></li>
+              <li><Link href="/contact" className="hover:text-white transition">About Us</Link></li>
+              <li><Link href="/contact" className="hover:text-white transition">Contact Us</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Press</Link></li>
+              <li><Link href="#" className="hover:text-white transition">Careers</Link></li>
             </ul>
           </div>
         </div>
@@ -79,10 +80,10 @@ const Footer = () => {
 
           {/* Social Icons */}
           <div className="flex gap-6 text-3xl">
-            <a href="#" className="hover:text-green-500 transition"><AiOutlineWhatsApp /></a>
-            <a href="#" className="hover:text-green-500 transition"><AiOutlineLinkedin /></a>
-            <a href="#" className="hover:text-green-500 transition"><AiOutlineFacebook /></a>
-            <a href="#" className="hover:text-green-500 transition"><AiOutlineTwitter /></a>
+            <Link href="#" className="hover:text-green-500 transition"><LinkiOutlineWhatsApp /></Link>
+            <Link href="#" className="hover:text-green-500 transition"><LinkiOutlineLinkedin /></Link>
+            <Link href="#" className="hover:text-green-500 transition"><LinkiOutlineFacebook /></Link>
+            <Link href="#" className="hover:text-green-500 transition"><LinkiOutlineTwitter /></Link>
           </div>
 
         </div>

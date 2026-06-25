@@ -1,10 +1,9 @@
 // Checkout.jsx
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { FaCartShopping, FaArrowLeft } from 'react-icons/fa6';
 import { useCart } from './CartContext';
 import Navbar from './Navbar';
-
 const Checkout = () => {
   const navigate = useNavigate();
   const { cart, removeFromCart, clearCart, cartCount, subtotal } = useCart();
@@ -210,9 +209,9 @@ const Checkout = () => {
                     >
                       Remove
                     </button>
-                    <a href="/tracking" className="text-green-600 hover:underline text-sm font-medium">
+                    <Link href="/tracking" className="text-green-600 hover:underline text-sm font-medium">
                       Track
-                    </a>
+                    </Link>
                   </div>
                 </div>
               ))}

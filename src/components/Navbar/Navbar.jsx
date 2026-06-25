@@ -6,6 +6,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FiHome } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
+import { Link } from 'react-router';
 
 const MenuLinks = [
   { id: 1, name: "Home", link: "/" },
@@ -46,19 +47,19 @@ const Navbar = ({ cartCount = 0 }) => {
           <div className="hidden sm:flex items-center gap-8">
 
             {MenuLinks.map((item) => (
-              <a
+              <Link
                 key={item.id}
                 href={item.link}
                 className="font-medium text-gray-700 dark:text-gray-300 hover:text-green-600 transition"
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
 
             <button className="relative">
-              <a href="/checkout">
+              <Link href="/checkout">
                 <FaCartShopping className="text-2xl text-gray-700 dark:text-white hover:text-green-600" />
-              </a>
+              </Link>
 
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
@@ -74,9 +75,9 @@ const Navbar = ({ cartCount = 0 }) => {
           <div className="flex sm:hidden items-center gap-4">
 
             <button className="relative">
-              <a href="/checkout">
+              <Link href="/checkout">
                 <FaCartShopping className="text-2xl text-gray-700 dark:text-white" />
-              </a>
+              </Link>
 
               {cartCount > 0 && (
                 <span className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white text-xs rounded-full flex items-center justify-center">
@@ -118,29 +119,29 @@ const Navbar = ({ cartCount = 0 }) => {
         <div className="bg-white dark:bg-gray-900 border-t dark:border-gray-700">
 
           {MenuLinks.map((item) => (
-            <a
+            <Link
               key={item.id}
               href={item.link}
               onClick={() => setMobileMenu(false)}
               className="block px-6 py-4 border-b border-gray-100 dark:border-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
             >
               {item.name}
-            </a>
+            </Link>
           ))}
 
           <div className="flex justify-center gap-8 py-5">
 
-            <a href="/" className="text-2xl text-gray-700 dark:text-white">
+            <Link href="/" className="text-2xl text-gray-700 dark:text-white">
               <FiHome />
-            </a>
+            </Link>
 
-            <a href="/blogs" className="text-2xl text-gray-700 dark:text-white">
+            <Link href="/blogs" className="text-2xl text-gray-700 dark:text-white">
               <BiHeart />
-            </a>
+            </Link>
 
-            <a href="/contact" className="text-2xl text-gray-700 dark:text-white">
+            <Link href="/contact" className="text-2xl text-gray-700 dark:text-white">
               <BiUser />
-            </a>
+            </Link>
 
           </div>
         </div>
