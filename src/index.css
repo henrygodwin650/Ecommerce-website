@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Required for darkMode: 'class' to work in v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer components{
+  .search-bar{
+    @apply w-0 group-hover:w-72 transition-all duration-300 rounded-full group-hover:border group-hover:border-gray-500 px-3 py-1 focus:outline-none focus:border text-gray-800 dark:border-gray-800 dark:bg-gray-900 group-hover:dark:bg-gray-800 dark:text-gray-200;
+  }
+
+  .hero-bg-color{
+    @apply bg-linear-to-r from-gray-300/80 to-gray-100 dark:from-gray-900 dark:to-gray-800 dark:text-white;
+  }
+  .form-input{
+    @apply w-full rounded-full border-gray-300 dark:border-gray-500 dark:bg-gray-800 px-2 py-1 mb-4
+  }
+}
+ @theme {
+  --color-primary: #f42c37;
+  --color-secondary: #f42c37;
+  --color-brand-yellow: #fdc62e;
+  --color-brand-green: #2dcc6f;
+  --color-brand-blue: #1376f4;
+  --color-brand-white: #eeeeee;
+}
