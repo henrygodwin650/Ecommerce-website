@@ -46,7 +46,7 @@ const Category = () => {
       <div className="container mx-auto px-4">
 
         <div className="text-center mb-10">
-          <h2 className="text-3xl font-bold">
+          <h2 className="text-3xl font-bold dark:text-white">
             Shop By Category
           </h2>
           <p className="text-gray-500 dark:text-gray-400 mt-2">

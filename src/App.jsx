@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div className="bg-gray-200 dark:bg-gray-800 min-h-screen">
-      <Navbar cartCount={cartCount} />
+      <Navbar Products={Products} cartCount={cartCount} />
       <Hero />
       <Category />
       <Trending />

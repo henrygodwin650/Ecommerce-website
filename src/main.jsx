@@ -12,6 +12,7 @@ import Blogs from './components/Blogs/Blogs.jsx';
 import MainContact from './components/MainContact/MainContact.jsx';
 import MainTracking from './components/MainTracking/MainTracking.jsx';
 import OrderPage from './components/order/OrderPage.jsx';
+import SearchResults from './components/search/SearchResult.jsx';
 
 import { CartProvider } from './components/Checkout/CartContext.jsx';
 
@@ -26,7 +27,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/contact" element={<MainContact />} />
           <Route path="/tracking" element={<MainTracking />} />
           <Route path="/orders" element={<OrderPage />} />
-
+          <Route path="/search" element={<SearchResults />} />
           <Route
             path="*"
             element={

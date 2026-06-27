@@ -94,7 +94,7 @@ const Products = () => {
               />
             </div>
 
-            <p className="font-semibold ps-1 line-clamp-2">{selected?.name || product.name}</p>
+            <p className="font-semibold text-gray-300 dark:text-white ps-1 line-clamp-2">{selected?.name || product.name}</p>
             <div className="flex items-center px-3 mt-2 gap-2">
               <img
                 className="w-16 sm:w-20"
@@ -120,19 +120,11 @@ const Products = () => {
                         [product.id]: buildVariation(product, v)
                       }))
                     }
-                    className={`
-  w-7 h-7
-  sm:w-9 sm:h-9
-  rounded-full
-  cursor-pointer
-  border-2
-  transition-all
-  duration-200
-  ${selected?.image === v.image
-                        ? "border-green-600 scale-110"
-                        : "border-gray-300 hover:border-green-500"
+                    className={`w-7 h-7 sm:w-9 sm:h-9 rounded-full cursor-pointer border-2 transition-all duration-200 ${selected?.image === v.image
+                      ? "border-green-600 scale-110"
+                      : "border-gray-300 hover:border-green-500"
                       }
-                        `}
+                      alt={v.color}`}
                   />
                 ))}
               </div>
@@ -148,7 +140,7 @@ const Products = () => {
                 type="number"
                 min="1"
                 defaultValue="1"
-                className="w-10 ps-[2px] text-center border border-gray-300 dark:border-gray-600 rounded-xl focus:outline-none focus:border-green-500"
+                className="w-10 ps-[2px] text-center border border-gray-300 dark:border-gray-300 dark:text-white rounded-xl focus:outline-none focus:border-green-500"
               />
             </div>
 

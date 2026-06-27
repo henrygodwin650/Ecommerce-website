@@ -3,7 +3,42 @@ import TshirtBlackPlus from "../../assets/products/variations/adults-plain-cotto
 import TshirtRed from "../../assets/products/variations/adults-plain-cotton-tshirt-2-pack-red.jpg";
 import TshirtTeal from "../../assets/products/variations/adults-plain-cotton-tshirt-2-pack-teal.jpg";
 
+// Import Accessories
+import ImageWatch1 from "../../assets/product/p-1.jpg";
+import ImageWatch2 from "../../assets/product/p-2.jpg";
+import ImageWatch3 from "../../assets/product/p-3.jpg";
+import ImageWatch4 from "../../assets/product/p-4.jpg";
+import ImageWatch5 from "../../assets/product/p-5.jpg";
+import ImageWatch6 from "../../assets/product/p-7.jpg";
+import ImageWatch7 from "../../assets/product/p-9.jpg";
+import HeadPhone from "../../assets/hero/headphone.png";
+import Watch from "../../assets/hero/watch.png";
+import SmartWatch from "../../assets/category/smartwatch2-removebg-preview.png";
+import SmartWatch1 from "../../assets/category/gaming.png";
+import SmartWatch2 from "../../assets/category/macbook.png";
+import SmartWatch3 from "../../assets/category/speaker.png";
+import EarPhone from "../../assets/category/earphone.png";
 
+
+// Import all Products
+import SideImage1 from "../../assets/6-piece-non-stick-baking-set.webp";
+import SideImage2 from "../../assets/6-piece-white-dinner-plate-set.jpg";
+import SideImage3 from "../../assets/backpack.jpg";
+import SideImage4 from "../../assets/bathroom-rug.jpg";
+import SideImage5 from "../../assets/electric-glass-and-steel-hot-water-kettle.webp";
+import SideImage6 from "../../assets/facial-tissue-2-ply-18-boxes.jpg";
+import SideImage7 from "../../assets/floral-mixing-bowl-set.jpg";
+import SideImage8 from "../../assets/kitchen-paper-towels-30-pack.jpg";
+import SideImage9 from "../../assets/knit-athletic-sneakers-pink.webp";
+import SideImage10 from "../../assets/non-stick-cooking-set-15-pieces.webp";
+import SideImage11 from "../../assets/round-airtight-food-storage-containers.jpg";
+import SideImage12 from "../../assets/sky-flower-stud-earrings.webp";
+import SideImage13 from "../../assets/straw-sunhat.webp";
+import SideImage14 from "../../assets/umbrella.jpg";
+import SideImage15 from "../../assets/vanity-mirror-silver.jpg";
+import SideImage16 from "../../assets/women-beach-sandals.jpg";
+import SideImage17 from "../../assets/women-chiffon-beachwear-coverup-black.jpg";
+import SideImage18 from "../../assets/women-chunky-beanie-gray.webp";
 import DuvetBlue from "../../assets/products/variations/duvet-cover-set-blue-queen.jpg";
 import DuvetBlueTwin from "../../assets/products/variations/duvet-cover-set-blue-twin.jpg";
 import DuvetRed from "../../assets/products/variations/duvet-cover-set-red-queen.jpg";
@@ -99,6 +134,257 @@ import Image48 from "../../assets/products/women-stretch-popover-hoodie-black.jp
 // Example: If you have more variations like different colors, add them here
 
 const ProductData = [
+    // Side Products
+
+    {
+        id: crypto.randomUUID(),
+        image: SideImage1,
+        name: "6-piece-non-stick-baking-set",
+        rating: { stars: 4.5, count: 3215 },
+        priceCents: 3100,
+        keywords: ["washable", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage2,
+        name: "6-piece-white-dinner-plate-set",
+        rating: { stars: 3.5, count: 2153 },
+        priceCents: 1100,
+        keywords: ["fashionable", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage3,
+        name: "backpack",
+        rating: { stars: 3.5, count: 2315 },
+        priceCents: 2130,
+        keywords: ["strong", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage4,
+        name: "bathroom-rug",
+        rating: { stars: 2.5, count: 3215 },
+        priceCents: 2990,
+        keywords: ["Smart", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage5,
+        name: "electric-glass-and-steel-hot-water-kettle",
+        rating: { stars: 3.5, count: 2615 },
+        priceCents: 2199,
+        keywords: ["Smart", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage6,
+        name: "facial-tissue-2-ply-18-boxes",
+        rating: { stars: 4, count: 215 },
+        priceCents: 2100,
+        keywords: ["Smart", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage7,
+        name: "floral-mixing-bowl-set",
+        rating: { stars: 4, count: 215 },
+        priceCents: 2100,
+        keywords: ["Smart", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage8,
+        name: "kitchen-paper-towels-30-pack",
+        rating: { stars: 3.5, count: 1215 },
+        priceCents: 1100,
+        keywords: ["Smart", "Portable"]
+    }, {
+        id: crypto.randomUUID(),
+        image: SideImage9,
+        name: "knit-athletic-sneakers-pink",
+        rating: { stars: 2.5, count: 215 },
+        priceCents: 2700,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage10,
+        name: "non-stick-cooking-set-15-pieces",
+        rating: { stars: 4.5, count: 215 },
+        priceCents: 2100,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage11,
+        name: "round-airtight-food-storage-containers",
+        rating: { stars: 4.5, count: 2615 },
+        priceCents: 2190,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage12,
+        name: "sky-flower-stud-earrings",
+        rating: { stars: 4.5, count: 6215 },
+        priceCents: 6100,
+        keywords: ["pretty", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage13,
+        name: "straw-sunhat",
+        rating: { stars: 4, count: 2215 },
+        priceCents: 4100,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage14,
+        name: "vanity-mirror-silver",
+        rating: { stars: 5, count: 223315 },
+        priceCents: 23100,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage15,
+        name: "umbrella",
+        rating: { stars: 4, count: 215 },
+        priceCents: 21400,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage16,
+        name: "women-beach-sandals",
+        rating: { stars: 4.5, count: 215 },
+        priceCents: 2500,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage17,
+        name: "women-chiffon-beachwear-coverup-black",
+        rating: { stars: 4, count: 215 },
+        priceCents: 2200,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SideImage18,
+        name: "women-chunky-beanie-gray",
+        rating: { stars: 4, count: 215 },
+        priceCents: 2300,
+        keywords: ["Smart", "Portable"]
+    },
+    //Accossories
+    {
+        id: crypto.randomUUID(),
+        image: ImageWatch1,
+        name: "Music Extreme ex200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 1320,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SmartWatch,
+        name: "Watch Extreme green belt ew500",
+        rating: { stars: 4, count: 215 },
+        priceCents: 21120,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: Watch,
+        name: "Twin Watch gold ex2200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 42020,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SmartWatch1,
+        name: "PsP5 with wireless pad",
+        rating: { stars: 5, count: 215 },
+        priceCents: 65200,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SmartWatch2,
+        name: "Macbook os200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 321280,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: SmartWatch3,
+        name: "Extreme Speaker double bass",
+        rating: { stars: 3.5, count: 215 },
+        priceCents: 11230,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: EarPhone,
+        name: "Earpiece xtreme ex200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 120,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: HeadPhone,
+        name: "Headphone Xspot ex200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 120,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: ImageWatch2,
+        name: "Apple Smart Watch ip300",
+        rating: { stars: 4.5, count: 215 },
+        priceCents: 5200,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: ImageWatch3,
+        name: "Xpress gold and black ex200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 2100,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: ImageWatch4,
+        name: "Xmusic silver and black ex200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 1200,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: ImageWatch5,
+        name: "XXBass adjustable head ex200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 3200,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: ImageWatch7,
+        name: "JBL navy-blue with extra speaker foams",
+        rating: { stars: 4, count: 215 },
+        priceCents: 4200,
+        keywords: ["Smart", "Portable"]
+    },
+    {
+        id: crypto.randomUUID(),
+        image: ImageWatch6,
+        name: "XWay-Music silver and black ex200",
+        rating: { stars: 4, count: 215 },
+        priceCents: 2200,
+        keywords: ["Smart", "Portable"]
+    },
     {
         id: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
         image: Image1,
@@ -204,7 +490,7 @@ const ProductData = [
         keywords: ["shoes", "sneakers"]
     },
     {
-        id: "a82c6bac-3067-4e68-a5ba-d827ac0be010",
+        id: crypto.randomUUID(),
         image: Image17,
         name: "Straw Wide Brim Sun Hat",
         rating: { stars: 4, count: 215 },
@@ -363,10 +649,10 @@ const ProductData = [
         priceCents: 799,
         keywords: ["tshirts", "apparel", "mens"],
         variations: [
-            {color: 'black', image: TshirtBlack},
-            {color: 'black-plus', image: TshirtBlackPlus},
-            {color: 'red', image: TshirtRed},
-            {color: 'teal', image: TshirtTeal},
+            { color: 'black', image: TshirtBlack },
+            { color: 'black-plus', image: TshirtBlackPlus },
+            { color: 'red', image: TshirtRed },
+            { color: 'teal', image: TshirtTeal },
         ]
     },
     {
@@ -494,7 +780,7 @@ const ProductData = [
             { color: "Black", image: MenShortBlack },
             { color: "gray", image: MenShortGray },
         ]
-    },{
+    }, {
         id: "bc2847e9-5323-403f-b7cf-57fde044a955",
         image: Image40,
         name: "Men's Fleece Hoodie - Light Teal",
