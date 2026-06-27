@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useRef, useState, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import DarkMode from '../DarkMode/DarkMode';
 import { BiUser, BiHeart } from 'react-icons/bi';
 import { IoMdSearch } from 'react-icons/io';
@@ -6,7 +7,6 @@ import { FaCartShopping } from "react-icons/fa6";
 import { FiHome } from "react-icons/fi";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
-import { Link } from 'react-router';
 
 const MenuLinks = [
   { id: 1, name: "Home", link: "/" },
@@ -16,8 +16,62 @@ const MenuLinks = [
   { id: 5, name: "Contact", link: "/contact" },
 ];
 
-const Navbar = ({ cartCount = 0 }) => {
+const Navbar = ({ cartCount = 0, Products }) => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const navigate = useNavigate();
+
+  const formatMoney = (cents) =>
+    (cents / 100).toLocaleString("en-US", {
+      style: "currency",
+      currency: "USD",
+    });
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [results, setResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+
+  const searchRef = useRef(null);
+
+  const handleSearch = (value) => {
+    setSearchTerm(value);
+
+    if (!value.trim()) {
+      setResults([]);
+      setShowResults(false);
+      return;
+    }
+
+    const filtered = Products.filter((product) =>
+      product.name.toLowerCase().includes(value.toLowerCase())
+    );
+
+    setResults(filtered);
+    setShowResults(true);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!searchTerm.trim()) return;
+
+    navigate(`/search?q=${encodeURIComponent(searchTerm)}`);
+
+    setShowResults(false);
+  };
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (searchRef.current && !searchRef.current.contains(event.target)) {
+        setShowResults(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700 shadow-sm">
@@ -33,13 +87,65 @@ const Navbar = ({ cartCount = 0 }) => {
 
           {/* Search */}
           <div className="hidden md:block flex-1 max-w-md mx-6">
-            <div className="relative">
-              <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
-              <input
-                type="text"
-                placeholder="Search products..."
-                className="w-full pl-12 pr-4 py-2.5 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 dark:text-white focus:outline-none focus:border-green-500"
-              />
+            <div className="hidden md:block flex-1 max-w-md mx-6">
+              <div className="relative" ref={searchRef}>
+
+                {/* Search Form */}
+                <form onSubmit={handleSubmit}>
+                  <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
+
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => handleSearch(e.target.value)}
+                    placeholder="Search products..."
+                    className="w-full pl-12 pr-24 py-2.5 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 dark:text-white"
+                  />
+
+                  <button
+                    type="submit"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-green-600 text-white px-4 py-1.5 rounded-full"
+                  >
+                    Search
+                  </button>
+                </form>
+
+                {/* 👇 SEARCH DROPDOWN GOES HERE */}
+                {showResults && (
+                  <div className="absolute left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl max-h-80 overflow-y-auto z-50">
+
+                    {results.length === 0 ? (
+                      <div className="p-4 text-center text-gray-500">
+                        No products found
+                      </div>
+                    ) : (
+                      results.slice(0, 6).map((product) => (
+                        <Link
+                          key={product.id}
+                          to={`/product/${product.id}`}
+                          onClick={() => setShowResults(false)}
+                          className="flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                        >
+                          <img
+                            src={product.image}
+                            alt={product.name}
+                            className="w-14 h-14 rounded object-cover"
+                          />
+
+                          <div>
+                            <p className="font-semibold">{product.name}</p>
+                            <p className="text-green-600 font-bold">
+                              {formatMoney(product.priceCents)}
+                            </p>
+                          </div>
+                        </Link>
+                      ))
+                    )}
+
+                  </div>
+                )}
+
+              </div>
             </div>
           </div>
 
@@ -99,13 +205,63 @@ const Navbar = ({ cartCount = 0 }) => {
 
         {/* Mobile Search */}
         <div className="md:hidden py-3">
-          <div className="relative">
-            <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
-            <input
-              type="text"
-              placeholder="Search products..."
-              className="w-full pl-12 pr-4 py-2.5 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 dark:text-white"
-            />
+          <div className="relative" ref={searchRef}>
+
+            {/* Search Form */}
+            <form onSubmit={handleSubmit}>
+              <IoMdSearch className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-500 text-xl" />
+
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => handleSearch(e.target.value)}
+                placeholder="Search products..."
+                className="w-full pl-12 pr-24 py-2.5 rounded-full border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-800 dark:text-white"
+              />
+
+              <button
+                type="submit"
+                className="absolute right-2 top-1/2 -translate-y-1/2 bg-green-600 text-white px-4 py-1.5 rounded-full"
+              >
+                Search
+              </button>
+            </form>
+
+            {/* 👇 SEARCH DROPDOWN GOES HERE */}
+            {showResults && (
+              <div className="absolute left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl max-h-80 overflow-y-auto z-50">
+
+                {results.length === 0 ? (
+                  <div className="p-4 text-center text-gray-500">
+                    No products found
+                  </div>
+                ) : (
+                  results.slice(0, 6).map((product) => (
+                    <Link
+                      key={product.id}
+                      to={`/product/${product.id}`}
+                      onClick={() => setShowResults(false)}
+                      className="flex items-center gap-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <img
+                        src={product.image}
+                        alt={product.name}
+                        className="w-14 h-14 rounded object-cover"
+                      />
+
+                      <div>
+                        <p className="font-semibold">{product.name}</p>
+                        <p className="text-green-600 font-bold">
+                          {formatMoney(product.priceCents)}
+                        </p>
+                      </div>
+                    </Link>
+                  ))
+                )}
+
+              </div>
+            )}
+
           </div>
         </div>
 

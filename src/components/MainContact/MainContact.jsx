@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { Link } from 'react-router';
+import Footer from '../Footer/Footer';
 
 const MainContact = () => {
   const [formData, setFormData] = useState({
@@ -154,6 +155,7 @@ const MainContact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

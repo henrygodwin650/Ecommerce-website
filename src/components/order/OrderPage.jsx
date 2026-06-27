@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from 'react-router';
+import Navbar from "./Navbar"
 
 const Orders = () => {
   const location = useLocation();
@@ -26,7 +27,9 @@ const Orders = () => {
   }
 
   return (
-    <div className="container mx-auto py-10 px-4">
+    <>
+     <Navbar />
+    <div className="container dark:bg-gray-500 mx-auto py-10 px-4">
       <h1 className="text-4xl font-bold mb-6">
         Order Confirmation
       </h1>
@@ -97,6 +100,7 @@ const Orders = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

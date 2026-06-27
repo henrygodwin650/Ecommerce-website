@@ -5,6 +5,7 @@ import Image2 from '../../assets/blogs/blog-2.jpg'
 import Image3 from '../../assets/blogs/blog-3.jpg'
 import Navbar from './Navbar'
 import { Link } from 'react-router';
+import Footer from '../Footer/Footer';
 
 const Blog = () => {
   const posts = [
@@ -92,6 +93,7 @@ const Blog = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

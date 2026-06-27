@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router';
 import { FaCartShopping, FaArrowLeft } from 'react-icons/fa6';
 import { useCart } from './CartContext';
 import Navbar from './Navbar';
+import Footer from '../Footer/Footer';
 const Checkout = () => {
   const navigate = useNavigate();
   const { cart, removeFromCart, clearCart, cartCount, subtotal } = useCart();
@@ -234,6 +235,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
